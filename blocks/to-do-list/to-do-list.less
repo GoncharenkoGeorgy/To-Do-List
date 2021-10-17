@@ -1,0 +1,96 @@
+.to-do-list{
+  max-width: 550px;
+}
+
+.to-do-list__title-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.to-do-list__title{
+
+}
+
+.to-do-list__title-button{
+  cursor: pointer;
+  border: none;
+  background-color: cornflowerblue;
+  margin: 0;
+  padding: 0 10px;
+  height: 40px;
+  border-radius: 20px;
+  align-self: center;
+  outline: none;
+}
+
+.to-do-list__search{
+  display: flex;
+  height: 50px;
+}
+
+.to-do-list__search-input{
+  margin: 0;
+  padding: 0;
+  border-radius: 30px;
+  flex-grow: 3;
+  border: none;
+  outline: none;
+  padding-left: 40px;
+}
+
+.to-do-list__search-input:hover {
+  
+}
+
+.to-do-list__search-button{
+  cursor: pointer;
+  font-size: 16px;
+  flex-grow: 1;
+  margin: 0;
+  margin-left: -40px;
+  padding: 0;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  &:hover{
+    background-color: greenyellow;
+  }
+}
+
+.to-do-list__items{
+  list-style-type: none;
+  margin: 15px 0 0;
+  padding: 0;
+}
+
+@color-thistle: thistle;
+
+.to-do-list__item{
+  display: flex;
+  width: 100%;
+  &:nth-child(2n+1){
+    border: 1px solid @color-thistle;
+    border-right: none;
+    border-left: none;
+  }
+  &:nth-child(2n){
+    background-color: @color-thistle;
+  }
+}
+
+.to-do-list__item-text{
+  flex-grow: 1;
+  padding-left: 10px;
+}
+
+.to-do-list__item-button{
+  cursor: pointer;
+  margin: auto 0 auto 10px;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  box-shadow: none;
+  border: none;
+  border-radius: 18px;
+}

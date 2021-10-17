@@ -1,0 +1,87 @@
+@keyframes rotation-one {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation-two {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.footer {
+  position: relative;
+  height: 350px;
+  margin-top: 20px;
+  background-image: url(../../images/footer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.footer__animation {
+  position: absolute;
+  transform: rotate(-15deg);
+  animation: rotation-one 20s linear infinite;
+}
+.footer__animation_first {
+  width: 230px;
+  height: 230px;
+  top: 0;
+  right: 0;
+  background-color: #2f80ed;
+  animation: rotation-one 20s linear infinite;
+}
+.footer__animation_second {
+  width: 150px;
+  height: 150px;
+  top: 20px;
+  right: 20px;
+  background-color: yellow;
+  animation: rotation-two 20s linear infinite;
+}
+@media screen and (max-width: 1030px) {
+  .footer {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .footer__animation_first {
+    top: 150px;
+    left: 180px;
+    width: 70px;
+    height: 70px;
+    background-color: red;
+  }
+  .footer__animation_second {
+    width: 80px;
+    height: 80px;
+    top: 140px;
+    left: 20px;
+    background-color: greenyellow;
+  }
+}
+@media screen and (max-width: 450px) {
+  .footer {
+    background-size: contain;
+  }
+  .footer__animation_first {
+    top: 80px;
+    width: 40px;
+    height: 40px;
+  }
+  .footer__animation_second {
+    width: 40px;
+    height: 40px;
+    top: 80px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .footer {
+    height: 130px;
+  }
+}
