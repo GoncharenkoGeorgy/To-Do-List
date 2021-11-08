@@ -18,62 +18,73 @@ class Helper {
   }
 
   isEmpty(obj) {
-
-    if (Object.keys(obj) === undefined || Object.keys(obj) === null || Object.keys(obj).length == 0) {
-      console.log(true);
-    } else {
-      console.log(false)
+    if (this.isObject(obj)) {
+      if (Object.keys(obj) === undefined || Object.keys(obj) === null || Object.keys(obj).length == 0) {
+        console.log('true');
+      } else {
+        console.log('false')
+      }
     }
   }
 
   isObject(obj) {
-    if (typeof obj !== this.type) {
-      console.log(false);
+    if (typeof obj !== this.type && Array.isArray) {
+      console.log('Передан не объект');
+      return false;
     } else {
-      console.log(true);
+      console.log('Передан объект');
+      return true;
     }
   }
 
   isDeepClone(obj) {
-    //const copyObj = lodashClonedeep(obj);
-    const copyObj = (JSON.parse(JSON.stringify(obj)));
+    if (this.isObject(obj)) {
+      //const copyObj = lodashClonedeep(obj);
+      const copyObj = (JSON.parse(JSON.stringify(obj)));
 
-    console.log(copyObj);
-    return copyObj;
+      console.log(copyObj);
+      return copyObj;
+    }
   }
 
   isEqual(obj1, obj2) {
-    const stringifyObj1 = JSON.stringify(obj1);
-    const stringifyObj2 = JSON.stringify(obj2);
+    if (this.isObject(obj1, obj2)) {
+      const stringifyObj1 = JSON.stringify(obj1);
+      const stringifyObj2 = JSON.stringify(obj2);
 
-    if (stringifyObj1 === stringifyObj2) {
-      console.log(true);
-    } else {
-      console.log(false);
+      if (stringifyObj1 === stringifyObj2) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
     }
   }
 
   findValue(obj, key) {
-    getValue(obj, key);
-    function getValue(obj, key) {
-      for (let value in obj) {
-        if (value === key) {
-          console.log(`Искомое значеник ${key}`, obj[value]);
-          return;
-        }
-        if (typeof (obj[value]) === 'object') {
-          getValue(obj[value], key);
+    if (this.isObject(obj)) {
+      getValue(obj, key);
+      function getValue(obj, key) {
+        for (let value in obj) {
+          if (value === key) {
+            console.log(`Искомое значеник ${key}`, obj[value]);
+            return;
+          }
+          if (typeof (obj[value]) === 'object') {
+            getValue(obj[value], key);
+          }
         }
       }
     }
   }
 
   hasKey(obj, key) {
-    if (JSON.stringify(obj).indexOf(`${key}`) > -1) {
-      console.log(true);
-    }
-    else {
-      console.log(false);
+    if (this.isObject(obj)) {
+      if (JSON.stringify(obj).indexOf(`${key}`) > -1) {
+        console.log(true);
+      }
+      else {
+        console.log(false);
+      }
     }
   }
 
@@ -91,6 +102,12 @@ const obj2 = {
     }
   }
 };
+
+const a = [1, 2, 4];
+const isObject = helper.isObject(a);
+
+const b = 5;
+const isEmpty = helper.isEmpty(b);
 
 const isEmpty1 = helper.isEmpty(obj1);
 const isEmpty2 = helper.isEmpty(obj1);
