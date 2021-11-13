@@ -16,10 +16,10 @@
         <span class="header__drop-text">To</span>
         <ul class="header__drop">
           <li class="header__drop_item">
-            <p class="header__drop_item-text">Do</p>
+            <button class="header__drop_item-text first-drop-but">Do</button>
           </li>
           <li class="header__drop_item">
-            <p class="header__drop_item-text">List</p>
+            <button class="header__drop_item-text second-drop-but">List</button>
           </li>
         </ul>
       </div>
@@ -27,7 +27,7 @@
     <section class="to-do-list">
       <div class="to-do-list__title-container">
         <h2 class="to-do-list__title">Список дел</h2>
-        <button class="to-do-list__title-button">Запланировать новое дело</button>
+        <button id='test' class="to-do-list__title-button">Запланировать новое дело</button>
       </div>
       <div class="to-do-list__search">
         <input class="to-do-list__search-input">
@@ -70,7 +70,25 @@
       <div class="footer__animation footer__animation_first"></div>
       <div class="footer__animation footer__animation_second"></div>
     </footer>
+
+    <section class="popup">
+      <div class="popup__container popup-mouse">
+        <button class="popup__close"></button>
+        <div class="popup__content">
+          <h2 class="popup__heading">Пустая форма</h2>
+          <form class="popup__form">
+            <fieldset class="popup__fields">
+              
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </div>
+
+
+  <script src="index.js"></script>
 </body>
 
 </html>

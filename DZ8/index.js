@@ -124,7 +124,7 @@ console.log(student2.getInfo());
 console.log(student3.getInfo());
 
 
-//тута
+тута
 function NewStudent() { }
 
 NewStudent.prototype.init = function (name, cohort, age) {
@@ -150,13 +150,12 @@ function inherit(ParentClass) {
 }
 
 const PythonDeveloperStudent = inherit(NewStudent);
-PythonDeveloperStudent.prototype = {
-  init: function (name, cohort, age) {
-    name = "Student " + name;
-    cohort = cohort;
-    age = age;
-    this._super.init.call(this, name, cohort, age);
-  }
+PythonDeveloperStudent.prototype.init =
+function (name, cohort, age) {
+  name = "Student " + name;
+  cohort = cohort;
+  age = age;
+  this._super.init.call(this, name, cohort, age);
 }
 
 const student4 = new PythonDeveloperStudent();
