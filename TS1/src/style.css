@@ -1,0 +1,53 @@
+.input {
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
+  height: 25px;
+  border-radius: 15px;
+}
+
+.button {
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  width: 70px;
+  border-radius: 15px;  
+}
+
+.container{
+  margin-top: 20px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.value{
+  margin-right: 5px;
+  margin-left: 5px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.searchValue{
+  border: 1px solid red;
+}
+
+.knot__left{
+  float: left;
+}
+.knot__left::before{
+  position: relative;
+  content: "  |\0a_|";
+  left: 40%;
+  white-space: pre;
+}
+
+.knot__right{
+  float: right;
+}
+
+.knot__right::before{
+  position: relative;
+  content: "|\0a|_";
+  left: 50%;
+  white-space: pre;
+}
